@@ -1,4 +1,4 @@
-package com.util;
+package org.github.iamsrr;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package com.util;
+package org.github.iamsrr.ecode;
+
+import org.github.iamsrr.EntityUtil;
 
 import java.io.UnsupportedEncodingException;
 
