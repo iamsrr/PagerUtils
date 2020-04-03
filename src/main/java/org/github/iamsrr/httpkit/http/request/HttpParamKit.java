@@ -19,7 +19,7 @@ public class HttpParamKit {
     /**
      * 组装后的参数列表
      */
-    private List<Param> params = new ArrayList<Param>();
+    private List<Param> params = new ArrayList<>();
 
     /**
      * 创建一个HttpParamUtils实例
@@ -157,7 +157,7 @@ public class HttpParamKit {
      *
      * @return
      */
-    public String getUri() {
+    public String getUri(String prefix) {
         StringBuilder uri = new StringBuilder();
         for (Param param : params) {
             uri.append('&').append(encodeUri(param.name)).append('=').append(encodeUri(param.value));
@@ -167,7 +167,14 @@ public class HttpParamKit {
             uri.deleteCharAt(0);
         }
 
-        return uri.toString();
+        if (null == prefix || prefix.trim().length() == 0) {
+            uri.toString();
+        }
+        return prefix.concat(uri.toString());
+    }
+
+    public String getUri() {
+        return this.getUri(null);
     }
 
     /**
