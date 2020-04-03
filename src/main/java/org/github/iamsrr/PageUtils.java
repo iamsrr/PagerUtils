@@ -70,28 +70,28 @@ public class PageUtils<T> {
     }
 
     public static String toLike(String str) {
-        if(null == str){
+        if (null == str) {
             return null;
         }
         str = str.trim();
-        if(str.equals("") || str.equals("null")){
+        if (str.equals("") || str.equals("null")) {
             return null;
         }
         return new String("%").concat(str).concat("%");
     }
 
     public static String toFullLike(String str) {
-        if(null == str){
+        if (null == str) {
             return null;
         }
         str = str.trim();
-        if(str.equals("") || str.equals("null")){
+        if (str.equals("") || str.equals("null")) {
             return null;
         }
         char[] chars = str.toCharArray();
         String s = new String();
-        for (int i = 0; i < chars.length; i++){
-            s = s.concat("%").concat(chars[i]+"");
+        for (int i = 0; i < chars.length; i++) {
+            s = s.concat("%").concat(chars[i] + "");
         }
         return s.concat("%");
     }

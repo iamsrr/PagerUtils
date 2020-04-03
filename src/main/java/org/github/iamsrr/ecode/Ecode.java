@@ -30,7 +30,26 @@ public class Ecode {
     }
 
     /**
+     * 自动判断参数编码类型并且转换成UTF-8
+     *
+     * @param str
+     * @return
+     */
+    public static String charatAuto(String str) {
+        String encodType = new Ecode().getEncodType(str);
+        String s = null;
+        try {
+            s = new String(str.getBytes(encodType), "utf-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return str;
+        }
+        return s;
+    }
+
+    /**
      * 自动判断参数编码类型
+     *
      * @param str
      * @return
      */
@@ -69,24 +88,6 @@ public class Ecode {
             }
         }
         return type;
-    }
-
-
-    /**
-     * 自动判断参数编码类型并且转换成UTF-8
-     * @param str
-     * @return
-     */
-    public static String charatAuto(String str) {
-        String encodType = new Ecode().getEncodType(str);
-        String s = null;
-        try {
-            s = new String(str.getBytes(encodType), "utf-8");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return str;
-        }
-        return s;
     }
 
 }
