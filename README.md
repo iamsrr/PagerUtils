@@ -3,3 +3,6 @@
 `application.yml->` <br>
 `IdGen.datacenter=int`  <br>
 `IdGen.worder=0-2`
+
+#### http
+`HttpKit.get()/post();`
