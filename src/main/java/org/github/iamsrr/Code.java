@@ -62,7 +62,7 @@ public class Code {
     }
 
     public Code buildError() {
-        this.setMessage("操作失败");
+        this.buildError("操作失败");
         return this;
     }
 
