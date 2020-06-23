@@ -245,7 +245,6 @@ public class DateUtil {
         if (beginYear == endYear) {
             for (int j = beginMonth; j <= endMonth; j++) {
                 list.add(getTimeList(beginYear, j, k));
-
             }
         } else {
             {
@@ -269,14 +268,12 @@ public class DateUtil {
     //获取某年某月按天切片日期集合（某个月间隔多少天的日期集合）
     public static List getTimeList(int beginYear, int beginMonth, int k) {
         List list = new ArrayList();
-        Calendar begincal = new GregorianCalendar(beginYear, beginMonth, 1);
+        Calendar begincal = new GregorianCalendar(beginYear, beginMonth - 1, 1);
         int max = begincal.getActualMaximum(Calendar.DATE);
-        for (int i = 1; i < max; i = i + k) {
+        for (int i = 0; i < max; i = i + k) {
             list.add(begincal.getTime());
             begincal.add(Calendar.DATE, k);
         }
-        begincal = new GregorianCalendar(beginYear, beginMonth, max);
-        list.add(begincal.getTime());
         return list;
     }
 
