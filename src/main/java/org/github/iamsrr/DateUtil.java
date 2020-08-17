@@ -337,12 +337,10 @@ public class DateUtil {
      * 将时间转换为时间戳
      */
     public static String dateToStampFor13(String s) throws ParseException {
-        String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = simpleDateFormat.parse(s);
         long ts = date.getTime();
-        res = String.valueOf(ts);
-        return res;
+        return String.valueOf(ts);
     }
 
     /*
@@ -468,8 +466,7 @@ public class DateUtil {
     public static String getNowTime() {
         String formater = "yyyy-MM-dd HH:mm:ss";
         SimpleDateFormat format = new SimpleDateFormat(formater);
-        String time = format.format(new Date());
-        return time;
+        return format.format(new Date());
     }
 
 }
