@@ -4,6 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * @Author https://gitee.com/zhuyuming/ChineseIDCardValidate.git
+ */
 public class ValidateIDCard {
     /**
      * 中国公民身份证号码最小长度。
